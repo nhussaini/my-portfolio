@@ -12,3 +12,12 @@ body{
 .site-content{
   flex: 1;
 }
+
+.header{
+  background: url('./assets/images/image.jpg') no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  min-height: 200px;
+  padding-top: 180px;
+  padding-bottom: 100px;
+}
