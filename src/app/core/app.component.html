@@ -1,2 +1,16 @@
-<button type="button" class="btn btn-primary">button</button>
-<router-outlet></router-outlet>
+<div class="site">
+  <div class="site-content">
+      <nav class="navbar navbar-expand">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" [routerLink]="['/home']" routerLinkActive="active" >Home</a>
+              <a class="nav-item nav-link" [routerLink]="['/portfolio']" routerLinkActive="active">Portfolio</a>
+              <a class="nav-item nav-link" [routerLink]="['/contact']" routerLinkActive="active">Contact</a>
+            </div>
+        </nav>
+    <div class="header"></div>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+  <footer></footer>
+</div>
