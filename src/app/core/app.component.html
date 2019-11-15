@@ -1,7 +1,7 @@
 <div class="site">
   <div class="site-content">
       <div class="container">
-        <nav class="navbar navbar-expand">
+        <nav class="navbar navbar-expand navbar-dark">
           <div class="navbar-nav">
              <a class="nav-item nav-link" [routerLink]="['/home']" routerLinkActive="active" ><i class="d-none d-sm-inline-block fas fa-home mx-1"></i>Home</a>
              <a class="nav-item nav-link" [routerLink]="['/portfolio']" routerLinkActive="active"><i class="d-none d-sm-inline-block far fa-images mx-1"></i>Portfolio</a>
@@ -15,9 +15,22 @@
         <h2>Developer</h2>
       </div>
     </div>
-    <main>
+    <main class="container">
       <router-outlet></router-outlet>
     </main>
   </div>
-  <footer></footer>
+  <footer class="footer container">
+    <div class="row">
+      <div class="col-12 col-sm-6">
+        <p>Copyright © 2019 Nasrullah Hussaini</p>
+      </div>
+      <div class="col-12 col-sm-6">
+        <ul class="social-icons float-right mt-3">
+          <li><a class="fab fa-facebook"></a></li>
+          <li><a class="fab fa-twitter"></a></li>
+          <li><a class="fas fa-envelope-open-text"></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 </div>
