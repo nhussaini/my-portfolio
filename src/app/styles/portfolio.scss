@@ -12,6 +12,9 @@ body{
 .site-content{
   flex: 1;
 }
+.main-content{
+  margin-top: -40px;
+}
 
 .header{
   background: url('./assets/images/image.jpg') no-repeat;
@@ -35,6 +38,33 @@ body{
     }
     &:hover:not(.active) {
       color: rgba($alt-color, 0.75);
+    }
+  }
+}
+
+.footer{
+  position: relative;
+  bottom: 1.25rem;
+  color:$alt-color;
+  border-top: solid 3px $accent;
+  background-color: $alt-bg;
+
+  p{
+    padding-top: 1.5rem;
+  }
+  .social-icons{
+    li{
+      display: inline-block;
+      list-style: none;
+
+      a{
+        padding: 0.75rem 1rem;
+        text-align: center;
+        &:hover{
+          color: $accent;
+        }
+      }
+
     }
   }
 }
