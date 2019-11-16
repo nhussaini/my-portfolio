@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./portfolio.component.sass']
 })
 export class PortfolioComponent implements OnInit {
+  selectedType: 'all' | 'angular' | 'react' | 'vue' = 'all';
 
   constructor() { }
 
