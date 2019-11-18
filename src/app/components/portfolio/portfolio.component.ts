@@ -8,13 +8,14 @@ import { Portfolio } from 'src/app/services/portfolio.model';
   styleUrls: ['./portfolio.component.sass']
 })
 export class PortfolioComponent implements OnInit {
+  types: string[];
   portfolios: Portfolio[];
-  private _selectedType: 'all' | 'Angular' | 'React' | 'Vue' = 'all'; // by default, it is all
+  private _selectedType = 'all'; // by default, it is all
 
   get selectedType() {
     return this._selectedType;
   }
-  set selectedType(newValue: 'all' | 'Angular' | 'React' | 'Vue') {
+  set selectedType(newValue: string) {
     if (newValue !== this._selectedType) {
       this._selectedType = newValue;
       this.loadPortfolios(this._selectedType);
@@ -29,6 +30,7 @@ export class PortfolioComponent implements OnInit {
 
   loadPortfolios(selectedType: string): void {
     this.portfolioSvc.get().subscribe(data => {
+      this.types = data.map(p => p.type).filter((value, index, self) => self.indexOf(value) === index);
       this.portfolios = data.filter(p => p.type === selectedType || selectedType === 'all');
     });
   }
