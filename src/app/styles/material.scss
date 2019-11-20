@@ -27,5 +27,4 @@ $my-portfolio-theme: mat-dark-theme($my-portfolio-primary, $my-portfolio-accent,
 @include angular-material-theme($my-portfolio-theme);
 
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
