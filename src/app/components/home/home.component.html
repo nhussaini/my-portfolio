@@ -74,17 +74,17 @@
       <h2><i class="fab fa-angular angular-color d-md-none mr-2"></i>Angular Developments</h2>
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error, velit ullam porro quasi voluptatem quia, reprehenderit excepturi architecto doloremque aut non corporis debitis, dolor in sit.</p>
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia incidunt at dolorem molestiae, quos recusandae fugit dignissimos natus facere delectus minima.</p>
-      <button mat-stroked-button>View More</button>
+      <button [routerLink]="['/portfolio']" [queryParams]="{filter:'Angular'}" routerLinkActive="router-link-active"  mat-stroked-button>View More</button>
     </div>
   </div>
 
-git
+
   <div class="row mt-5">
     <div class="col-12 col-md-9 text-right">
       <h2>React Developments<i class="fab fa-react react-color d-md-none ml-2"></i></h2>
       <p>In porro itaque inventore reiciendis harum sed voluptatum eaque eligendi corrupti, tenetur quia fugit laudantium omnis perferendis beatae nulla amet provident numquam voluptate deserunt asperiores consequuntur!</p>
       <p>Doloribus unde tempora vero cumque voluptates iste atque beatae nisi, nemo odit quo reprehenderit animi, provident repellat. Provident eveniet eligendi alias!</p>
-      <button mat-stroked-button>View More</button>
+      <button [routerLink]="['/portfolio']" [queryParams]="{filter:'React'}" mat-stroked-button>View More</button>
     </div>
     <div class="col-3 text-center">
         <i class="fab fa-react fa-10x react-color d-none d-md-block"></i>
@@ -100,7 +100,7 @@ git
       <h2><i class="fab fa-vuejs vue-color d-md-none mr-2"></i>Vue Developments</h2>
       <p>Sunt ipsam quidem blanditiis. Veritatis earum similique eveniet architecto? Porro, autem. Ad fugiat ratione ab eveniet voluptatibus atque perspiciatis culpa illum cumque sed, iusto architecto qui?</p>
       <p>Provident quo delectus omnis dolorem. Eum accusamus saepe eveniet aspernatur voluptate minus sed, eius dicta, nam dolorum ad et nostrum facilis!</p>
-      <button mat-stroked-button>View More</button>
+      <button [routerLink]="['/portfolio']" [queryParams]="{filter:'Vue'}" mat-stroked-button>View More</button>
     </div>
   </div>
 
@@ -114,15 +114,12 @@ git
       </div>
     </div>
     <div class="row no-gutters">
-      <div class="col-12 col-sm-4 col-md-4"><img class="img-fluid" src="https://fakeimg.pl/650x450/000000/?text=app1" alt="app1"></div>
-      <div class="col-12 col-sm-4 col-md-4"><img class="img-fluid" src="https://fakeimg.pl/650x450/000000/?text=app2" alt="app2"></div>
-      <div class="col-12 col-sm-4 col-md-4"><img class="img-fluid" src="https://fakeimg.pl/650x450/000000/?text=app3" alt="app3"></div>
-      <div class="col-12 col-sm-6 col-md-3"><img class="img-fluid" src="https://fakeimg.pl/650x450/000000/?text=app4" alt="app4"></div>
-      <div class="col-12 col-sm-6 col-md-3"><img class="img-fluid" src="https://fakeimg.pl/650x450/000000/?text=app5" alt="app5"></div>
-      <div class="col-12 col-sm-6 col-md-3"><img class="img-fluid" src="https://fakeimg.pl/650x450/000000/?text=app6" alt="app6"></div>
-      <div class="col-12 col-sm-6 col-md-3"><img class="img-fluid" src="https://fakeimg.pl/650x450/000000/?text=app7" alt="app7"></div>
+      <div *ngFor="let item of recentProjects; index as i"
+       [ngClass]="{'col-12 col-sm-4 col-md-4': i < 3, 'col-12 col-sm-6 col-md-3': i>=3}">
+        <img class="img-fluid" [src]="item.preview + '?text=' +item.name" [alt]="item.name">
+      </div>
       <div class="col-12 mt-3">
-        <button mat-stroked-button>View More</button>
+        <button [routerLink]="['/portfolio']" mat-stroked-button>View More</button>
       </div>
     </div>
   </div>
