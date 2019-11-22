@@ -5,7 +5,7 @@
 </div>
 <mat-divider class="my-3"></mat-divider>
 <div class="row mb-5">
-  <div class="col-4">
+  <div class=" col-12 col-md-4">
     <address>
       <p><strong>Nasrullah Hussaini</strong></p>
       <p>Toronto</p>
@@ -13,8 +13,21 @@
     </address>
     <address>
       <p><strong>Email</strong></p>
-      <a href="mailto:nhussaini1994@gmail.com">nhussaini1994@gmail.com</a>
+      <a class= "accent-color" href="mailto:nhussaini1994@gmail.com">nhussaini1994@gmail.com</a>
     </address>
   </div>
-  <div class="col-8"></div>
+  <div class="col-12 col-md-8">
+    <form ngNoForm action="https://formspree.io/nasrullah_hussaini@yahoo.com" method="POST">
+      <mat-form-field class="full-width mb-2">
+        <input matInput type="email" placeholder="Your Email" name="_replyto" required>
+      </mat-form-field>
+      <mat-form-field class="full-width mb-2">
+        <input matInput placeholder="Subject" name="subject" required>
+      </mat-form-field>
+      <mat-form-field class="full-width mb-2">
+        <textarea matInput placeholder="Message" name="message"></textarea>
+      </mat-form-field>
+      <button mat-stroked-button type="submit">Send Message</button>
+    </form>
+  </div>
 </div>
